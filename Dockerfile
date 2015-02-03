@@ -8,4 +8,4 @@ RUN pip install paho-mqtt
 
 ADD mqtt_push.py /home/mqtt_push.py
 
-ENTRYPOINT ["python /home/mqtt_push.py"]
+ENTRYPOINT ["python", "/home/mqtt_push.py"]
