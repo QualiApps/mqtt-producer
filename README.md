@@ -1,18 +1,24 @@
-# Mqtt producer
+Mqtt producer
+===========
 The python script, which using as a MQTT producer for RabbitMQ broker. 
 
 Running the daemon
+-----------------
 
-<pre>
-<code>
-docker run -d -P --name producer qapps/mqtt_producer [options]
-</code>
-</pre>
+`docker run -d -P --name producer qapps/mqtt_producer [options]`
+
 
 options:
-    RMQ_SERVER_IP - rabbitmq IP-address
-    SLEEP_TIME - pause, between each message
-    ES_INDEX_TYPE - elasticsearch index type
-    RAND_MIN - min value
-    RAND_MAX - max value
-    CAR_ID - id car
+
+    1 - rabbitmq IP-address (default - 127.0.0.1)
+
+    2 - pause, between each message (in sec) (default - 1)
+
+    3 - elasticsearch index type (string) (default - temperature)
+
+    4 - min random value (int) (default - 1)
+
+    5 - max random value (int) (default - 100)
+
+    6 - id car (string) (default - "car")
+
