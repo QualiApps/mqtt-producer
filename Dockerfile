@@ -1,11 +1,14 @@
-# Version: 0.0.1
+# MQTT Producer
+
 FROM fedora:21
 
-MAINTAINER Yury Kavaliou <test@test.com>
+MAINTAINER Yury Kavaliou <yury_kavaliou@epam.com>
 
-RUN yum install -y python-pip
-RUN pip install paho-mqtt
+RUN yum install -y python-pip \
+    && pip install paho-mqtt
 
-ADD mqtt_push.py /home/mqtt_push.py
+COPY ./trips/ /home/trips/
+COPY telemetry.py /home/telemetry.py
+COPY mqtt_push.py /home/mqtt_push.py
 
 ENTRYPOINT ["python", "/home/mqtt_push.py"]

@@ -14,7 +14,7 @@ options:
 
     2 - pause, between each message (in sec) (default - 1)
 
-    3 - elasticsearch index type (string) (default - temperature)
+    3 - elasticsearch index type (string) (default - "temperature")
 
     4 - min random value (int) (default - 1)
 
