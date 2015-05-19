@@ -19,7 +19,7 @@ def vin_generator(size=17, chars=string.ascii_uppercase + string.digits):
     return ''.join(random.choice(chars) for _ in range(size))
 
 # broker IP
-rmq_host = (len(sys.argv) > 1) and sys.argv[1] or os.environ.get("RMQ_PORT_5672_TCP_ADDR", "127.0.0.1")
+rmq_host = (len(sys.argv) > 1) and sys.argv[1] or os.environ.get("RMQ_PORT_5672_TCP_ADDR", "feed")
 
 # pause between each message (0.000002 ~8k/s)
 sleep_time = (len(sys.argv) > 2) and sys.argv[2] or os.environ.get("DELAY_MESS", 0.5)
